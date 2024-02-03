@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://magdy-ma7moud.github.io/-Barcode-Generator/ -->
+   <html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="jquery.min.js.download"></script>	
+	<script src="bootstrap.min.js.download"></script>
+	<!-- JsBarcode library -->
+	<script src="JsBarcode.all.min.js.download"></script>
+	<script src="html2pdf.bundle.js"></script>
+	<title>Barcode Generator</title>
+  </head>
+  <body>
+	<div class="container" style="margin-top: 4rem;">    
+		<h4 align="center">Barcode Generator Vedross</h4>
+		<div class="container">    
+		  <div class="row">
+			<div class="col-lg-12">
+			  <label for="input">Barcode text</label> 
+			  <textarea rows="8" class="form-control" id="input" placeholder="Enter the data" oninput="generateBarcode()"></textarea>
+			  <br>
+			  <input type="button" class="btn btn-success col-lg-12" onclick="downloadBarcode()" value="Download">
+			</div>
+		
+		  </div>
+		</div>
+		<div class="col-lg-12" align="center">       
+			<div id="barcode-container"></div>
+		  </div>
+	  
+		<script>
+		  function generateBarcode() {
+			var input = document.getElementById("input").value;
+			var barcodeContainer = document.getElementById("barcode-container");
+	  
+			// Clear existing barcode elements
+			barcodeContainer.innerHTML = '';
+	  
+			// Split input into lines
+			var lines = input.split('\n');
+	  
+			// Generate barcode for each line
+			lines.forEach(function(line) {
+			  if (line.trim() !== '') {
+				// Create a new SVG element
+				var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+				svg.setAttribute("width", "464px");
+				svg.setAttribute("height", "142px");
+	  
+				// Generate barcode for the current line
+				JsBarcode(svg, line.trim());
+	  
+				// Append the new SVG element to the container
+				barcodeContainer.appendChild(svg);
+			  }
+			});
+		  }
+	  
+		  function downloadBarcode() {
+			// Implement download functionality if needed
+		  }
+		</script>
+	  </div>
+	  <script>
+    function downloadBarcode() {
+      const barcodeContainer = document.getElementById("barcode-container");
+
+      // Convert barcode container to PDF using html2pdf library
+      html2pdf(barcodeContainer, {
+        margin: 10,
+        filename: 'barcode.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      });
+    }
+	  </script>
+	  
+  
+</body>
+</html>
