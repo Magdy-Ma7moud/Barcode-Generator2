@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+  #main {
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  
+  @media (max-width: 800px) {
+    #main {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 0px;
+      width: 100%;
+      min-width: 0px;
+    }
+  
+    .container {
+      width: 100%;
+    }
+  
+    .github-banner {
+      display: none;
+    }
+  }
+  #userInput{
+    height: 37px;
+    outline: none;
+    border-right: none;    
+  }
+  #user-select{
+    border: 1px solid rgb(220, 220, 220);
+  }
+  #barcode {
+    vertical-align: middle;
+  }
+  
+  #title {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    line-height: 90%;
+  }
+  
+  #title a:link {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  #title a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  #title a:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+  
+  #title a:active {
+    text-decoration: underline;
+    color: #000;
+  }
+  
+  #invalid {
+    display: none;
+    color: #DE0000;
+    margin-top: 10px;
+    font-size: 14pt;
+    vertical-align: middle;
+  }
+  
+  #barcodeType {
+    height: 35px;
+  }
+  
+  .barcode-container {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  
+  .description-text {
+    height: 42px;
+  }
+  
+  .description-text p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .value-text {
+    height: 42px;
+    text-align: right;
+  }
+  
+  .value-text p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .slider-container {
+    margin-top: 17px;
+  }
+  
+  .input-container {
+    margin-top: 5px;
+  }
+  
+  .barcode-select {
+    border-color: #ccc;
+  }
